@@ -1,0 +1,31 @@
+{
+  "name": "interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "babel-preset-react": "^6.1.18",
+    "express": "^4.13.3",
+    "history": "^1.13.1",
+    "react": "^0.14.3",
+    "body-parser": "^1.14.1",
+    "react-dom": "^0.14.3",
+    "babelify": "^7.2.0",
+    "react-router": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashu361/interview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashu361/interview/issues"
+  },
+  "homepage": "https://github.com/ashu361/interview#readme"
+}

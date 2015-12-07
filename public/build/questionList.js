@@ -15,7 +15,7 @@ var QuestionList = React.createClass({
     var appQuestionNodes = newApplicationQuestions.map(function (question) {
       var model = question.model,
           question_id = question.id;
-      return React.createElement(Question, { key: 'app' + question_id, question: question, value: props.application_response[model] ? props.application_response[model] : '', onChange: handleApplicationChange, disabled: applicationCreated, onEnterPressed: handleEnterPressed });
+      return React.createElement(Question, { key: 'app' + question_id, question: question, value: props.application_response[model] ? props.application_response[model] : '', onChange: handleApplicationChange, disabled: applicationCreated, onEnterPressed: handleEnterPressed, onRadioChange: handleChange });
     });
 
     var activeQuestions = flatInterview(props.interview, state.response);

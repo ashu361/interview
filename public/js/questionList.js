@@ -15,7 +15,7 @@ var QuestionList = React.createClass({
       var model = question.model, 
           question_id = question.id;
       return (
-        <Question key={'app' + question_id} question={question} value={props.application_response[model] ? props.application_response[model]: ''}onChange={handleApplicationChange} disabled={applicationCreated} onEnterPressed={handleEnterPressed}></Question>
+        <Question key={'app' + question_id} question={question} value={props.application_response[model] ? props.application_response[model]: ''}onChange={handleApplicationChange} disabled={applicationCreated} onEnterPressed={handleEnterPressed} onRadioChange={handleChange}></Question>
       );
     });
     

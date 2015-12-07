@@ -135,6 +135,10 @@ var totalFields = 0;
 		this.ctrlContinue = createElement('button', { id: 'continue-button', cName: 'fs-continue', inner: 'Continue', appendTo: this.ctrls });
 		this._showCtrl(this.ctrlContinue);
 
+		//back Button
+		this.ctrlBack = createElement('button', { id: 'back-button', cName: 'fs-back', inner: 'Back', appendTo: this.ctrls });
+		this._showCtrl(this.ctrlBack);
+
 		// navigation dots
 		if (this.options.ctrlNavDots) {
 			this.ctrlNav = createElement('nav', { cName: 'fs-nav-dots', appendTo: this.ctrls });
@@ -219,11 +223,15 @@ var totalFields = 0;
 			self._nextField();
 		});
 
+		this.ctrlBack.addEventListener('click', function () {
+			self._showField(self.current - 1);
+		});
+
 		// navigation dots
 		if (this.options.ctrlNavDots) {
 			this.ctrlNavDots.forEach(function (dot, pos) {
 				dot.addEventListener('click', function () {
-					self._showField(pos);
+					self._showField(this.current - 1);
 				});
 			});
 		}
@@ -278,7 +286,7 @@ var totalFields = 0;
   * jumps to the next field
   */
 	FForm.prototype._nextField = function (backto) {
-		this._checkFieldChange();
+		if (backto == undefined) this._checkFieldChange();
 		if (this.isLastStep || !this._validade() || this.isAnimating) {
 			return false;
 		}
@@ -357,6 +365,7 @@ var totalFields = 0;
 				//self._hideCtrl( self.ctrlNav );
 				self._hideCtrl(self.ctrlProgress);
 				self._hideCtrl(self.ctrlContinue);
+				self._hideCtrl(self.ctrlBack);
 				self._hideCtrl(self.ctrlFldStatus);
 				// replace class fs-form-full with fs-form-overview
 				classie.remove(self.formEl, 'fs-form-full');

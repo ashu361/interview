@@ -100,6 +100,7 @@
 .fs-progress,
 .fs-numbers,
 button.fs-continue,
+button.fs-back,
 .fs-message-error,
 .fs-message-final {
 	visibility: hidden;
@@ -630,7 +631,8 @@ button.fs-continue,
 
 /* Continue button and submit button */
 button.fs-submit,
-button.fs-continue {
+button.fs-continue, 
+button.fs-back {
 	padding: 0.6em 1.5em;
 	border: 3px solid #232529;
 	border-radius: 40px;
@@ -657,8 +659,17 @@ button.fs-continue {
 	font-size: 1.25em;
 }
 
+button.fs-back {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin: 0 0 60px 40px;
+	font-size: 1.25em;
+}
+
 button.fs-submit:hover,
 button.fs-submit:focus,
+button.fs-back:hover, 
 button.fs-continue:hover {
 	background: #232529;
 	color: #fff;

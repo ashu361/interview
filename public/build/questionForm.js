@@ -38,8 +38,9 @@ var QuestionForm = React.createClass({
         this.setState({ interview: data.data.interview });
         if (this.state.application_id) {
           this.loadResponseByApplicationId(this.state.application_id);
+        } else {
+          addStyle();
         }
-        addStyle();
         var saveBeforeNextQuestion = this.saveBeforeNextQuestion;
         var no_application_questions = this.state.new_application_interview.length;
         $("#continue-button").bind("click", function () {
